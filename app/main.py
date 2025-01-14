@@ -11,12 +11,12 @@ app = FastAPI(
 # creacion de tablas para la aplicacion
 @app.on_event("startup")
 async def startup():
-    await create_tables()
+    create_tables()
 
 # incluir las rutas de los diferentes modulos   
-app.include_router(declaraciones.router)
-app.include_router(usuarios.router)
-app.include_router(nombramientos.router)
+app.include_router(declaraciones.router, prefix="/api", tags=["declaraciones"])
+app.include_router(usuarios.router, prefix="/api", tags=["usuarios"])
+app.include_router(nombramientos.router, prefix="/api", tags=["nombramientos"])
 
 @app.get("/")
 async def root():

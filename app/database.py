@@ -12,3 +12,12 @@ Base = declarative_base()
 def create_tables():
     from app.models import TipoDeclaracion, Usuario, Nombramiento, HistorialCargo, Historial, Declaracion
     Base.metadata.create_all(bind=engine)
+
+
+# dependencia para obtener la sesion de la bd
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
