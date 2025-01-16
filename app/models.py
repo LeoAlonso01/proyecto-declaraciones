@@ -33,6 +33,7 @@ class Nombramiento(Base):
     fecha_termino = Column(DateTime, nullable=True)
     estado = Column(String, nullable=False)
     fecha_registro = Column(DateTime, nullable=False)
+    is_active = Column(String, nullable=False)
 
 class HistorialCargo(Base):
     __tablename__ = "historial_cargos"
@@ -59,3 +60,4 @@ class Declaracion(Base):
     observaciones = Column(Text)
     imagen = Column(String, nullable=True)
     fecha_registro = Column(DateTime, nullable=False)
+    is_active = Column(String, nullable=False)

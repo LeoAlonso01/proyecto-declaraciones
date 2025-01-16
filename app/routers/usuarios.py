@@ -44,7 +44,7 @@ def obtener_usuario(usuario_id: int , db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Usuario no encontrado")
     return usuario
 
-# Ruta para actualizar un usuario
+# Ruta para eliminar un usuario
 @router.delete("/usuarios/{usuario_id}", response_model=dict)
 def soft_delete_usuario(usuario_id: int, db: Session = Depends(get_db)):
     usuario = db.query(Usuario).filter(Usuario.id_usuario == usuario_id).first()
