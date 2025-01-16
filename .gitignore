@@ -32,3 +32,5 @@ webpack.config.js
 /declaraciones-env/
 /requirements.txt
 bd.sql 
+/aws.py
+
