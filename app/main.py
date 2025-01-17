@@ -5,7 +5,7 @@ from app.database import create_tables
 app = FastAPI(
     title="Declaraciones API",
     description="API para el manejo de declaraciones patrimoniales",
-    version="0.1",
+    version="0.3",
 )
 
 # creacion de tablas para la aplicacion

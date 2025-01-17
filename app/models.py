@@ -34,18 +34,19 @@ class Nombramiento(Base):
     estado = Column(String, nullable=False)
     fecha_registro = Column(DateTime, nullable=False)
     is_active = Column(String, nullable=False)
+    imagen = Column(String, nullable=True)
 
 class HistorialCargo(Base):
     __tablename__ = "historial_cargos"
     id_historial_cargo = Column(Integer, primary_key=True, index=True)
-    id_nombramiento = Column(Integer, ForeignKey("public.nombramientos.id_nombramiento"), nullable=False)
+    id_nombramiento = Column(Integer, ForeignKey("nombramientos.id_nombramiento"), nullable=False)
     cargo_anterior = Column(String, nullable=False)
     motivo_cambio = Column(Text)
 
 class Historial(Base):
     __tablename__ = "historial"
     id_historial = Column(Integer, primary_key=True, index=True)
-    id_usuario = Column(Integer, ForeignKey("public.usuarios.id_usuario"), nullable=False)
+    id_usuario = Column(Integer, ForeignKey("usuarios.id_usuario"), nullable=False)
     accion = Column(String, nullable=False)
     fecha = Column(DateTime, nullable=False)
 
@@ -54,7 +55,7 @@ class Declaracion(Base):
     __tablename__ = "declaraciones_entregadas"
     id_declaracion = Column(Integer, primary_key=True, index=True)
     nombre_declarante = Column(String, nullable=False)
-    id_tipo = Column(Integer, ForeignKey("public.tipos_declaraciones.id_tipo"), nullable=False)
+    id_tipo = Column(Integer, ForeignKey("tipos_declaraciones.id_tipo"), nullable=False)
     fecha_declaracion = Column(DateTime, nullable=False)
     fecha_recepcion = Column(DateTime, nullable=False)
     observaciones = Column(Text)
