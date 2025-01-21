@@ -7,7 +7,7 @@ import os
 load_dotenv()
 
 # Leer la URL de la base de datos desde las variables de entorno
-DATABASE_URL = os.getenv("DATABASE_URL", "postgres://example_postgresql_db_wgru_user:LL2xL05p8ljzOs7cnh2tCYlST07v42QO@dpg-cu2n79jqf0us73bpp5c0-a:5432/example_postgresql_db_wgru")
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://example_postgresql_db_wgru_user:LL2xL05p8ljzOs7cnh2tCYlST07v42QO@dpg-cu2n79jqf0us73bpp5c0-a:5432/example_postgresql_db_wgru")
 if not DATABASE_URL:
     raise RuntimeError("DATABASE_URL no está definida en las variables de entorno")
 
