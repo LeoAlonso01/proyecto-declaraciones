@@ -30,7 +30,6 @@ webpack.config.js
 /public/
 /build/
 /declaraciones-env/
-/requirements.txt
 bd.sql 
 aws.py
 
